@@ -13,6 +13,26 @@ In this section we will help you install dependencies with ease. Before you proc
 - Python development package
 - Pulseaudio development package.
 
+#### To test if you are missing any of the stated systems, run following commands for each:
+    $> gcc -v
+    $> automake --version
+    $> autoconf --version
+    $> libtool -V
+    $> bison -V
+    $> swig -version
+    $> python --version
+    $> pulseaudio --version
+
+If you are missing any of the following after testing, use package manager of your system to intsall them
+
+##### For MacOS(Hish Sierra)
+    $> brew install <all missing pakages>
+
+    Usually missing ones:
+    $> brew install swig pulseaudio
+
+------------
+
 ### PocketSphinx
 To install PocketSphinx first you need to install SphinxCore. To do so follow below steps.
 #### SphinxBase Installation
