@@ -6,8 +6,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    title = "Welcome to the audio controller"  
-    return render_template("index.html", title=title)
+    title = "Welcome to the audio controller"
+    paragraph = ["Warning: if you're not using headphones, pressing play will cause feedback.",
+                "Render the audio stream from an audio-only getUserMedia() call with an audio element.",
+                "The MediaStream object stream passed to the getUserMedia() callback is in global scope, so you can inspect it from the console."]
+    return render_template("index.html", title=title, paragraph=paragraph)
 
 if __name__ == "__main__":
     app.run(debug=True)

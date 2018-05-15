@@ -1,12 +1,16 @@
 <html>
+	<head>
+	</head>
 
-<head>
-</head>
-
-<body class="body">
 	<body>
-		<p> {{ title }} </p>
-	</body>
-</body>
 
+		<div id="container">
+			<h3> {{ title }} </h3>
+			<audio id="gum-local" controls autoplay></audio>
+			{% for p in paragraph %}
+				<p> {{ p }} </p>
+			{% endfor%}
+		</div>
+		<script src="static/js/audio.js"></script>
+	</body>
 </html>
