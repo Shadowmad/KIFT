@@ -16,9 +16,6 @@ def homepage():
                 "The MediaStream object stream passed to the getUserMedia() callback is in global scope, so you can inspect it from the console."]
     return render_template("index.html", title=title, paragraph=paragraph)
 
-
-
-
 # Functions to deal with socket inputs / outputs
 @socketio.on('message')
 def handle_message(message):
@@ -32,5 +29,12 @@ def handle_greetings(data):
     send("Greetings, master")
 
 # Running flask application from socketio.run
+@app.route('/alarm')
+def alarmPage():
+    title = "Set the alarm"
+    paragraph = ["Description of alarm :)"]
+    return render_template("alarm.html", title=title, paragraph=paragraph)
+
+
 if __name__ == "__main__":
     socketio.run(app)
