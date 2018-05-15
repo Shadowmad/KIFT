@@ -5,6 +5,9 @@ var constraints = window.constraints = {
   video: false
 };
 
+// Function to handle the stream from mic.
+// In future send that to flask server
+
 function handleSuccess(stream) {
   var audioTracks = stream.getAudioTracks();
   console.log('Got stream with constraints:', constraints);
@@ -15,6 +18,8 @@ function handleSuccess(stream) {
   window.stream = stream; // make variable available to browser console
   audio.srcObject = stream;
 }
+
+// Function to catch and display and error
 
 function handleError(error) {
   console.log('navigator.getUserMedia error: ', error);
