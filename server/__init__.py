@@ -28,6 +28,17 @@ def handle_greetings(data):
     print(data)
     send("Greetings, master")
 
+@socketio.on('audio_chunk')
+def handle_voice_input(input_buffer):
+    print("received an audio buffer")
+    print(input_buffer)
+    print(type(input_buffer))
+    send("Thank you")
+
+
+
+
+
 # Running flask application from socketio.run
 @app.route('/alarm')
 def alarmPage():
