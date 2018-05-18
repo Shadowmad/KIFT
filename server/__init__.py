@@ -1,6 +1,7 @@
 from gevent import monkey; monkey.patch_all()
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send, emit
+from subprocess import call
 
 # Port 5000
 
@@ -30,10 +31,13 @@ def handle_greetings(data):
 
 @socketio.on('audio_chunk')
 def handle_voice_input(input_buffer):
-    print("received an audio buffer")
-    print(input_buffer)
-    print(type(input_buffer))
-    send("Thank you")
+	# call(["../a.out"])
+    # print("received an audio buffer")
+	# print(input_buffer)
+	myfile = "./myfile.raw"
+	with open(myfile, 'a') as f:
+		f.write(input_buffer)
+	send("Thank you")
 
 
 
