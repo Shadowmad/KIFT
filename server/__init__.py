@@ -31,18 +31,15 @@ def handle_greetings():
     print("socket connected\n")
     send("Greetings, master")
 
-
 @socketio.on('audio_chunk')
 def handle_voice_input(input_buffer):
-    print(type(input_buffer))
     print("received an audio buffer")
     result, audio = processor.process(input_buffer)
-    print("audio: ", type(audio))
     ret = 0
     if result == 1:
         for chunk in audio:
             ret += output_file.write(chunk)
-        print("SAVED {}".format(ret))
+        print("SAVED {} bytes in mic.raw".format(ret))
     send("Thank you")
 
 # Running flask application from socketio.run
