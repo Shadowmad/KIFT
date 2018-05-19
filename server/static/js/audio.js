@@ -29,8 +29,6 @@ function convertFloat32ToInt16(buffer) {
   return buf.buffer;
 }
 
-
-
 function handleSuccess(stream) {
 	console.log(stream)
 	var context = new AudioContext();
@@ -43,9 +41,8 @@ function handleSuccess(stream) {
 		console.log(e.inputBuffer);
 
 		// In order to get int16 representation use following:
-		// let dataBlock = convertFloat32ToInt16(e.inputBuffer.getChannelData(0));
-		let dataBlock = e.inputBuffer.getChannelData(0);
-		console.log(dataBlock)
+		let dataBlock = convertFloat32ToInt16(e.inputBuffer.getChannelData(0));
+		// let dataBlock = e.inputBuffer.getChannelData(0);
 
 		socket.emit('audio_chunk', dataBlock);
 		context.resume().then( () => {
