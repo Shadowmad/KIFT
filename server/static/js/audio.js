@@ -65,21 +65,37 @@ function handleError(error) {
 // 	then(handleSuccess).catch(handleError);
 var mediaObject = navigator.mediaDevices.getUserMedia(constraints)
 	.then(function(stream) {
-		var mediaRecorder = new MediaStreamRecorder(stream);
-		mediaRecorder.recorderType = StereoAudioRecorder;
-		mediaRecorder.mimeType = 'audio/pcm';
-		mediaRecorder.bufferSize = 16384;
-		mediaRecorder.sampleRate = 16 * 1000;
-		mediaRecorder.audioChannels = 1;
+		var mediaRecorder = RecordRTC(stream, {
+		    recorderType: StereoAudioRecorder,
+			mimeType: 'audio/wav',
+		    bufferSize: 16384,
+			desiredSampRate: 16 * 1000,
+			numberOfAudioChannels: 1,
+			timeSlice: 1000,
+			onStateChanged: function(blob) {
+				console.log(blob);
+				mediaRecorder.startRecording();
+				// socket.emit('audio_chunk', blob);
+			},
+			ondataavailable: function(blob) {
+				console.log(blob);
+				mediaRecorder.startRecording();
+				// socket.emit('audio_chunk', blob);
+			}
+		});
+		console.log(mediaRecorder);
+		// mediaRecorder.recorderType = StereoAudioRecorder;
+		// mediaRecorder.mimeType = 'audio/pcm';
+		// mediaRecorder.bufferSize = 16384;
+		// mediaRecorder.sampleRate = 16 * 1000;
+		// mediaRecorder.audioChannels = 1;
 
 
 		window.mr = mediaRecorder;
-		mediaRecorder.ondataavailable = function(blob) {
-			console.log(blob);
-			socket.emit('audio_chunk', blob);
-	    }
-		mediaRecorder.start(3000);
-		// setTimeout(mediaRecorder.stop, 3000);
-		// setInterval(mediaRecorder.requestData.bind(mediaRecorder), 3000);
+		mediaRecorder.initRecorder(function() {
+			mediaRecorder.startRecording();
+			// setInterval(mediaRecorder.stopRecording, 1000);
+		});
+		setTimeout(mediaRecorder.startRecording, 3000);
 	})
 	.catch(handleError);
