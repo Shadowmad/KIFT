@@ -31,9 +31,6 @@ def handle_greetings(data):
 
 @socketio.on('audio_chunk')
 def handle_voice_input(input_buffer):
-	# call(["../a.out"])
-    # print("received an audio buffer")
-	# print(input_buffer)
 	myfile = "./myfile.raw"
 	with open(myfile, 'a') as f:
 		f.write(input_buffer)
