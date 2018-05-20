@@ -29,7 +29,7 @@ def handle_message(message):
 @socketio.on('connect')
 def handle_greetings():
     print("socket connected\n")
-    send("Greetings, master")
+    emit('connect', "Greetings, master")
 
 @socketio.on('audio_chunk')
 def handle_voice_input(input_buffer):
