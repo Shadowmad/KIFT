@@ -17,7 +17,7 @@ main(int argc, char *argv[])
 	    		 "-dict", MODELDIR "/en-us/cmudict-en-us.dict",
 		         NULL);
     if (config == NULL) {
-	fprintf(stderr, "Failed to create config object, see log for details\n");
+		fprintf(stderr, "Failed to create config object, see log for details\n");
 	return -1;
     }
 
@@ -27,17 +27,11 @@ main(int argc, char *argv[])
 	return -1;
     }
 
-    fh = fopen("goforward.raw", "rb");
-    if (fh == NULL) {
-		fprintf(stderr, "Unable to open input file goforward.raw\n");
-	return -1;
-    }
-
     rv = ps_start_utt(ps);
 
     while (!feof(fh)) {
 		size_t nsamp;
-		nsamp = fread(buf, 2, 512, fh);
+		nsamp = fread(buf, 2, 512, stdin);
 		rv = ps_process_raw(ps, buf, nsamp, FALSE, FALSE);
     }
 

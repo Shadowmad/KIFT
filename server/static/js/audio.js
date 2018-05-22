@@ -19,12 +19,11 @@ var mediaObject = navigator.mediaDevices.getUserMedia(constraints)
 		mediaRecorder.sampleRate = 44100;
 		mediaRecorder.audioChannels = 1;
 
-
 		window.mr = mediaRecorder;
 		mediaRecorder.ondataavailable = function(blob) {
 			console.log(blob);
 			socket.emit('audio_chunk', blob);
 	    }
-		mediaRecorder.start(3000);
+		mediaRecorder.start(1000);
 	})
 	.catch(handleError);

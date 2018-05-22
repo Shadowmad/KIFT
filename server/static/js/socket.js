@@ -1,7 +1,8 @@
 // Connect to the server throught socket
-var socket = io.connect('http://' + document.domain + ':' + location.port);
+// var socket = io.connect('http://' + document.domain + ':' + location.port);
+var socket = io.connect(document.domain + ':' + '20000');
 
-// Event handlers using socket connection 
+// Event handlers using socket connection
 
 socket.on('connect', function(message) {
 	var msg = new SpeechSynthesisUtterance(message);
