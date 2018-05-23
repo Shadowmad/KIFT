@@ -2,6 +2,7 @@
 var socket = io.connect('http://' + document.domain + ':' + location.port);
 console.log(location.port);
 
+// Event handlers using socket connection
 
 socket.on('connect', function(message) {
 	var msg = new SpeechSynthesisUtterance(message);
