@@ -1,6 +1,8 @@
 // Connect to the server throught socket
 var socket = io.connect('http://' + document.domain + ':' + location.port);
+console.log(location.port);
 
+socket.send('Hi server\n');
 // Event handlers using socket connection 
 
 socket.on('connect', function(message) {
