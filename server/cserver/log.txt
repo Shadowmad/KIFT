@@ -1,0 +1,520 @@
+GET /index.html HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /static/js/socket.js HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /static/js/audio.js HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042340518-0 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042340586-1 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042340589-2 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042340590-3 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /favicon.ico HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042341154-4 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042341176-5 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042341479-6 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042341729-7 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042341782-8 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342046-9 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342065-10 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342085-11 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342363-12 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342372-13 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342387-14 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342666-15 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342674-16 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342690-17 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342969-18 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342986-19 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042342993-20 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042343288-21 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042343289-22 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042343311-23 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042343592-24 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042343592-25 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042343614-26 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042343894-27 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042343908-28 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042343926-29 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344183-30 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344211-31 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344212-32 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344350-33 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344549-34 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344640-35 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344641-36 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344653-37 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344853-38 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344944-39 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042344944-40 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042345124-41 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042345156-42 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042345425-43 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042345426-44 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042345428-45 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042345619-46 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
+GET /socket.io/?EIO=3&transport=polling&t=1527042345729-47 HTTP/1.1
+Host: localhost:6357
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36
+Accept: */*
+Referer: http://localhost:6357/index.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+
+
