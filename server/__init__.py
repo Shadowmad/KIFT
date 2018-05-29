@@ -1,16 +1,13 @@
 from gevent import monkey; monkey.patch_all()
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send, emit
-import subprocess as sub
-from server import DataProcessor
+from subprocess import call
 
 # Port 5000
 
 app = Flask(__name__)
 app.debug = True
 socketio = SocketIO(app)
-processor = DataProcessor(5)
-output_file = open('mic.raw', 'ab')
 
 @app.route('/')
 def homepage():
@@ -33,14 +30,11 @@ def handle_greetings():
 
 @socketio.on('audio_chunk')
 def handle_voice_input(input_buffer):
-    print("received an audio buffer")
-    result, audio = processor.process(input_buffer)
-    ret = 0
-    if result == 1:
-        for chunk in audio:
-            ret += output_file.write(chunk)
-        print("SAVED {} bytes in mic.raw".format(ret))
-    send("Thank you")
+	myfile = "./myfile.raw"
+	with open(myfile, 'ab') as f:
+		f.write(input_buffer)
+	# call(["./recognizer", "myfile.raw"])
+	emit('audio_chunk', "Thank you")
 
 # Running flask application from socketio.run
 @app.route('/alarm')
