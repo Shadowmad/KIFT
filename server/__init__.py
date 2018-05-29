@@ -1,13 +1,26 @@
 from gevent import monkey; monkey.patch_all()
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send, emit
-from subprocess import call
+import shlex
+from subprocess import Popen, PIPE
 
 # Port 5000
 
 app = Flask(__name__)
 app.debug = True
 socketio = SocketIO(app)
+
+def get_exitcode_stdout_stderr(cmd):
+    """
+    Execute the external command and get its exitcode, stdout and stderr.
+    """
+    args = shlex.split(cmd)
+
+    proc = Popen(args, stdout=PIPE, stderr=PIPE)
+    out, err = proc.communicate()
+    exitcode = proc.returncode
+    #
+    return exitcode, out, err
 
 @app.route('/')
 def homepage():
@@ -33,8 +46,10 @@ def handle_voice_input(input_buffer):
 	myfile = "./myfile.raw"
 	with open(myfile, 'ab') as f:
 		f.write(input_buffer)
-	# call(["./recognizer", "myfile.raw"])
-	emit('audio_chunk', "Thank you")
+	cmd = "pocketsphinx_continuous -infile myfile.raw"
+	exitcode, out, err = get_exitcode_stdout_stderr(cmd)
+	emit('audio_chunk', out)
+	emit('audio_resume', {'resume': "true"})
 
 # Running flask application from socketio.run
 @app.route('/alarm')

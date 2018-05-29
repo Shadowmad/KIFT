@@ -13,7 +13,7 @@ socket.on('message', function(data) {
 });
 
 socket.on('audio_chunk', function(response) {
-	// console.log(response);
+	console.log(response);
 });
 
 socket.on('input', function(data) {
