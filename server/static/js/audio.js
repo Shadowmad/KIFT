@@ -21,9 +21,15 @@ var mediaObject = navigator.mediaDevices.getUserMedia(constraints)
 
 		window.mr = mediaRecorder;
 		mediaRecorder.ondataavailable = function(blob) {
+			mediaRecorder.pause();
 			console.log(blob);
 			socket.emit('audio_chunk', blob);
 	    }
-		mediaRecorder.start(1000);
+		socket.on('audio_resume', function(response) {
+			console.log(response);
+			if (response.resume)
+				mediaRecorder.resume();
+		});
+		mediaRecorder.start(3000);
 	})
 	.catch(handleError);
