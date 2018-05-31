@@ -1,19 +1,29 @@
 <html>
 	<head>
+		<link rel="stylesheet" hfre="../static/CSS/main.css">
 	</head>
 
 	<body>
 
+	<div id="main">
 		<div id="container">
-			<h3> {{ title }} </h3>
+			<h3> Welcome to KIFT by 🌽 corn Squad 🌽 </h3>
 			<audio id="gum-local" controls autoplay></audio>
-			{% for p in paragraph %}
-				<p> {{ p }} </p>
-			{% endfor%}
+			<p>Commands are: </p>
+			<p> ururu <BR> 
+				 minion <BR>
+				 help<BR>
+				 set an alarm<BR>
+				 what time is it<BR>
+				 what's the weather today<BR>
+				 search for<BR>
+				 go to sleep<BR> </p>
 		</div>
+	</div>
 		<script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"> </script>
+		
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-		<script src="static/js/socket.js"></script>
+		
 		<script src="static/js/audio.js"></script>
 	</body>
 </html>
