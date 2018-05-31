@@ -1,5 +1,7 @@
 var audio = document.querySelector('audio');
 
+var socket = new WebSocket('ws://127.0.0.1:9000', 'kift-audio-stream-protocol');
+
 var constraints = window.constraints = {
 	audio: true,
 	video: false
@@ -22,7 +24,7 @@ var mediaObject = navigator.mediaDevices.getUserMedia(constraints)
 		window.mr = mediaRecorder;
 		mediaRecorder.ondataavailable = function(blob) {
 			console.log(blob);
-			socket.emit('audio_chunk', blob);
+			socket.send(blob);
 	    }
 		mediaRecorder.start(1000);
 	})
