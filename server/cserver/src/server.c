@@ -9,8 +9,6 @@ static int callback_http(struct lws *wsi,
 	return 0;
 }
 
-
-
 static int kift_audio_stream_protocol_callback(struct lws *wsi,
 	enum lws_callback_reasons reason, void *user, void *in, size_t len)
 {
@@ -36,8 +34,6 @@ static int kift_audio_stream_protocol_callback(struct lws *wsi,
 	
 	return 0;
 }
-
-
 
 static struct lws_protocols protocols[] = {
 	/* first protocol must always be HTTP handler */
