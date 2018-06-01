@@ -6,7 +6,7 @@
 /*   By: jtahirov <jtahirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 14:26:38 by jtahirov          #+#    #+#             */
-/*   Updated: 2018/05/31 12:42:39 by jtahirov         ###   ########.fr       */
+/*   Updated: 2018/05/31 18:09:24 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char *ft_get_html(char *filename)
 
 	fd = open(filename, O_RDONLY);
 	result = (fd < 0) ? "404 Page not found" : ft_strnew(0);
-	while ((ret = read(fd, buffer, 1024)) > 0)
+	while ((ret = read(fd, buffer, 1023)) > 0)
 	{
 		buffer[ret] = '\0';
 		tmp = result;
@@ -30,6 +30,7 @@ static char *ft_get_html(char *filename)
 		free(tmp);
 		bzero(buffer, 1024);
 	}
+	close(fd);
 	return (result);
 }
 
@@ -39,7 +40,9 @@ static char	*ft_parse_buffer(char buffer[])
 
 	printf("%s\n", buffer);
 	result = NULL;
-	if (strstr(buffer, "/index.html"))
+	if (!buffer)
+		return NULL;
+	if (strnstr(buffer, "/index.html", 15))
 		result = ft_get_html("../templates/index.html");
 	if (strstr(buffer, "/static/js/audio.js"))
 		result = ft_get_html("../static/js/audio.js");
@@ -80,11 +83,15 @@ static void ft_parse_clients(int socketfd)
 		if (client_fd < 0)
 			continue ;
 		bzero(buffer, 2048);
-		read(client_fd, buffer, 2048);
+		read(client_fd, buffer, 2047);
 		if (!buffer[0])
 			continue ;
-		result = ft_parse_buffer(buffer);
+		if (!(result = ft_parse_buffer(buffer)))
+			continue ;
 		ft_answer(client_fd, result, strlen(result));
+		if (result)
+			free(result);
+		result = NULL;
 		printf("\nEnd\n");
 	}
 }
