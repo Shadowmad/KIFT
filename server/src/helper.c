@@ -6,7 +6,7 @@
 /*   By: jtahirov <jtahirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 10:06:28 by jtahirov          #+#    #+#             */
-/*   Updated: 2018/05/31 10:42:43 by jtahirov         ###   ########.fr       */
+/*   Updated: 2018/05/31 17:57:54 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char 	*ft_strjoin(char *str1, char *str2)
 		return (strdup(str1));
 	len1 = strlen(str1);
 	len2 = strlen(str2);
-	fresh = calloc(1, len1 + len2);
+	fresh = ft_strnew(len1 + len2);
 	strcpy(fresh, str1);
 	strcpy(fresh + len1, str2);
 	return (fresh);

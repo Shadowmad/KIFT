@@ -12,14 +12,21 @@ LIBFT_PATH = ./libft/
 OBJ_PATH = ./obj/
 
 BREW = $(HOME)/.brew
-SRC_NAME = ft_server.c helper.c
+BREW_INCLUDE = $(BREW)/include
+POCKETSPHINX = $(BREW_INCLUDE)/pocketsphinx
+SPHINXBASE = $(BREW_INCLUDE)/sphinxbase
+POCKETSPHINX_FLAGS = `pkg-config --cflags --libs pocketsphinx sphinxbase`
+MODELDIR = \"`pkg-config --variable=modeldir pocketsphinx`\"
+
+SRC_NAME = httpServer.c helper.c
 
 SRC = $(patsubst %, $(SRC_PATH)%, $(SRC_NAME))
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 OBJ = $(patsubst %, $(OBJ_PATH)%, $(OBJ_NAME))
+# pocketsphinx_connection.c
+ASRC_NAME = audioServer.c 
 
-ASRC_NAME = server.c
 ASRC = $(patsubst %, $(SRC_PATH)%, $(ASRC_NAME))
 AOBJ_NAME = $(ASRC_NAME:.c=.o)
 AOBJ = $(patsubst %, $(OBJ_PATH)%, $(AOBJ_NAME))
@@ -33,13 +40,13 @@ $(HTTPSERV): $(OBJ)
 	@echo "HTTPSERV is built"
 
 $(AUDISERV): $(AOBJ)
-	$(CC) -I $(BREW)/include -L $(BREW)/lib/ -lwebsockets -o $@ $(DEBUG) $^
+	$(CC) $(POCKETSPHINX_FLAGS) -DMODELDIR=$(MODELDIR) -lwebsockets -o $@ $(DEBUG) $^
 	@mkdir -p $(EXE_PATH)
 	@cp $(AUDISERV) $(EXE_PATH)
 	@echo "AUDISERV is built"
 
 $(AOBJ): $(ASRC)
-	$(CC) -c -I$(BREW)/include -L$(BREW)/lib/ -lwebsockets $^ -o $@
+	$(CC) -c $(POCKETSPHINX_FLAGS) -DMODELDIR=$(MODELDIR) -lwebsockets $^ -o $@
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(OBJ_PATH)
