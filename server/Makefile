@@ -16,7 +16,7 @@ BREW_INCLUDE = $(BREW)/include
 POCKETSPHINX = $(BREW_INCLUDE)/pocketsphinx
 SPHINXBASE = $(BREW_INCLUDE)/sphinxbase
 POCKETSPHINX_FLAGS = `pkg-config --cflags --libs pocketsphinx sphinxbase`
-MODELDIR = \"`pkg-config --variable=modeldir pocketsphinx`\"
+MODELDIR = \"../models\"
 
 SRC_NAME = httpServer.c helper.c
 
@@ -25,7 +25,7 @@ SRC = $(patsubst %, $(SRC_PATH)%, $(SRC_NAME))
 OBJ_NAME = $(SRC_NAME:.c=.o)
 OBJ = $(patsubst %, $(OBJ_PATH)%, $(OBJ_NAME))
 # pocketsphinx_connection.c
-ASRC_NAME = audioServer.c 
+ASRC_NAME = audioServer.c
 
 ASRC = $(patsubst %, $(SRC_PATH)%, $(ASRC_NAME))
 AOBJ_NAME = $(ASRC_NAME:.c=.o)
@@ -46,11 +46,11 @@ $(AUDISERV): $(AOBJ)
 	@echo "AUDISERV is built"
 
 $(AOBJ): $(ASRC)
-	$(CC) -c $(POCKETSPHINX_FLAGS) -DMODELDIR=$(MODELDIR) -lwebsockets $^ -o $@
+	$(CC) -c $(POCKETSPHINX_FLAGS) -DMODELDIR=$(MODELDIR) -I $(BREW)/opt/openssl/include/ -lwebsockets $^ -o $@
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(OBJ_PATH)
-	$(CC) -o $@ $(CFLAGS) $(DEBUG) -c $< -I $(INCLUDE_PATH) -I $(BREW)/include 
+	$(CC) -o $@ $(CFLAGS) $(DEBUG) -c $< -I $(INCLUDE_PATH) -I $(BREW)/include -I $(BREW)/opt/openssl/include/
 
 clean:
 	@rm -rf $(OBJ_PATH)
