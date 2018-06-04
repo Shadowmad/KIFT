@@ -12,41 +12,47 @@ ps_decoder_t *g_ps;
 
 static void recognize(void *chunk, int len)
 {
-	const char 	*hyp;
-	static int	total_len;
+	const char             *hyp;
+	uint8_t                in_speech;
+	static uint8_t        utt_started = false;
 
-
-	total_len += len;
-	printf("total_len = %d\n", total_len);
-    ps_process_raw(g_ps, chunk, len, false, false);
-    if (total_len >= (89000))
-    {
-		total_len = 0;
-        ps_end_utt(g_ps);
-		printf("getting hyp\n");
-        hyp = ps_get_hyp(g_ps, NULL);
-        printf("hyp => %s\n", hyp);
-        ps_start_utt(g_ps);
-    }
+	ps_process_raw(g_ps, chunk, len / 2, false, false);
+	in_speech = ps_get_in_speech(g_ps);
+	if (in_speech && !utt_started) {
+		utt_started = true;
+		printf("Listening...\n");
+	}
+	if (!in_speech && utt_started) {
+		ps_end_utt(g_ps);
+		hyp = ps_get_hyp(g_ps, NULL);
+		if (hyp) {
+			printf("%s\n", hyp);
+			fflush(stdout);
+		}
+		if (ps_start_utt(g_ps) < 0)
+			printf("Failed to start utterance\n");
+		utt_started = false;
+		printf("ready...\n");
+	}
 }
 
 static void 	init_ps()
 {
-    cmd_ln_t *config;
+	cmd_ln_t *config;
 
-    config = cmd_ln_init(NULL, ps_args(), TRUE,
-		         "-hmm", MODELDIR "/en-us/en-us",
-		         "-lm", MODELDIR "/en-us/en-us.lm.bin",
-	    		 "-dict", MODELDIR "/en-us/cmudict-en-us.dict",
+	config = cmd_ln_init(NULL, ps_args(), TRUE,
+				 "-hmm", MODELDIR "/en-us/en-us",
+				 "-lm", MODELDIR "/en-us/en-us.lm.bin",
+				 "-dict", MODELDIR "/en-us/cmudict-en-us.dict",
 				 "-logfn", "/dev/null",
-		         NULL);
-    if (config == NULL) {
+				 NULL);
+	if (config == NULL) {
 		fprintf(stderr, "Failed to create config object, see log for details\n");
-    }
-    g_ps = ps_init(config);
-    if (g_ps == NULL) {
+	}
+	g_ps = ps_init(config);
+	if (g_ps == NULL) {
 		fprintf(stderr, "Failed to create recognizer, see log for details\n");
-    }	
+	}	
 }
 
 static int callback_http(struct lws *wsi,
@@ -66,7 +72,7 @@ static int kift_audio_stream_protocol_callback(struct lws *wsi,
 			// file = fopen("test.raw", "wb");
 			printf("Connection established\n");
 			init_ps();
-        	ps_start_utt(g_ps);
+			ps_start_utt(g_ps);
 			printf("started utt\n");
 			// printf("Opened file\n");
 			break;
@@ -81,7 +87,7 @@ static int kift_audio_stream_protocol_callback(struct lws *wsi,
 			// printf("Closed file\n");
 			printf("ending utt\n");
 			ps_end_utt(g_ps);
-        	hyp = ps_get_hyp(g_ps, NULL);
+			hyp = ps_get_hyp(g_ps, NULL);
 			printf("hyp => %s\n", hyp);
 			printf("Connection closed\n");
 			break;
