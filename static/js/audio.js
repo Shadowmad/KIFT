@@ -17,6 +17,10 @@ var constraints = window.constraints = {
 	video: false
 };
 
+// var options = {
+// 	audioBitsPerSecond: 44100
+// }
+
 // Function to catch and display and error
 
 function handleError(error) {
