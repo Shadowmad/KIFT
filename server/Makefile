@@ -16,7 +16,7 @@ BREW_INCLUDE = $(BREW)/include
 POCKETSPHINX = $(BREW_INCLUDE)/pocketsphinx
 SPHINXBASE = $(BREW_INCLUDE)/sphinxbase
 POCKETSPHINX_FLAGS = `pkg-config --cflags --libs pocketsphinx sphinxbase`
-MODELDIR = \"../models\"
+MODELDIR = \"./models\"
 
 SRC_NAME = httpServer.c helper.c
 
