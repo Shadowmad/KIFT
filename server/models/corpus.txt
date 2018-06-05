@@ -1,8 +1,6 @@
 minion
-help
 set an alarm
 what time is it
 what is the weather today
 search for
 go to sleep
-

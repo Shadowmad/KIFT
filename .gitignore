@@ -11,3 +11,9 @@ sphinxbase/
 sphinxbase/*
 !.gitignore
 *.log
+*.dic
+*.lm
+*.lm.bin
+*.log_pronounce
+*.sent
+*.vocab
