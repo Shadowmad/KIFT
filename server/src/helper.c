@@ -6,11 +6,11 @@
 /*   By: jtahirov <jtahirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 10:06:28 by jtahirov          #+#    #+#             */
-/*   Updated: 2018/05/31 17:57:54 by jtahirov         ###   ########.fr       */
+/*   Updated: 2018/06/05 16:09:52 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_server.h"
+#include <ft_server.h>
 
 char 	*ft_strmjoin(int num, ...)
 {
