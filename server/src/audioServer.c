@@ -59,7 +59,6 @@ static void recognize(void *chunk, int len, struct lws *wsi)
 		g_utt_started = false;
 		printf("ready...\n");
 	}
-	//sleep_msec(100);
 }
 
 static void init_ps()

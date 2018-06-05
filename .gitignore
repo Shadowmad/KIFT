@@ -10,4 +10,4 @@ pocketsphinx/
 sphinxbase/
 sphinxbase/*
 !.gitignore
-
+*.log
