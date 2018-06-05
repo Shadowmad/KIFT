@@ -6,7 +6,7 @@
 /*   By: jtahirov <jtahirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 14:26:38 by jtahirov          #+#    #+#             */
-/*   Updated: 2018/06/03 21:52:25 by jtahirov         ###   ########.fr       */
+/*   Updated: 2018/06/05 13:37:20 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,14 @@ static char	*ft_parse_buffer(char buffer[])
 		result = ft_get_html("../templates/index.html");
 	if (strstr(buffer, "/static/js/audio.js"))
 		result = ft_get_html("../static/js/audio.js");
+	if (strstr(buffer, "GET /static/css/styles.css"))
+		result = ft_get_html("../static/css/styles.css");
+	if (strnstr(buffer, "/alarm.html", 15))
+		result = ft_get_html("../templates/alarm.html");
+	if (strstr(buffer, "/static/js/alarm.js"))
+		result = ft_get_html("../static/js/alarm.js");
+	if (strstr(buffer, "/static/js/command_parser.js"))
+		result = ft_get_html("../static/js/command_parser.js");
 	return (result);
 }
 
@@ -87,7 +95,10 @@ static void ft_parse_clients(int socketfd)
 		if (!buffer[0])
 			continue ;
 		if (!(result = ft_parse_buffer(buffer)))
+		{
+			printf("result = NULL can't find the page O_O \n");
 			continue ;
+		}
 		ft_answer(client_fd, result, strlen(result));
 		if (result)
 			free(result);

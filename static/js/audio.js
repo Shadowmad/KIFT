@@ -48,5 +48,6 @@ socket.onmessage = function (message) {
 			interConnection.send("kws");
 		}
 		console.log('got this from socket: ', message);
+		parseCommand(message.data);
 	}
 }
