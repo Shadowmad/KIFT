@@ -1,16 +1,7 @@
-// var audio = document.querySelector('audio');
-
-// var socket = new WebSocket('ws://127.0.0.1:9000', 'kift-audio-stream-protocol');
-
-// var constraints = window.constraints = {
-// 	audio: true,
-// 	video: false
-// };
-
-// // Function to catch and display and error
 var audio = document.querySelector('audio');
 
 var socket = new WebSocket('ws://127.0.0.1:9000', 'kift-audio-stream-protocol');
+var interConnection = new WebSocket('ws://127.0.0.1:9000', 'kift-switch-mode');
 
 var constraints = window.constraints = {
 	audio: true,
@@ -22,6 +13,7 @@ var constraints = window.constraints = {
 function handleError(error) {
 	console.log('navigator.getUserMedia error: ', error);
 };
+
 var mediaObject = navigator.mediaDevices.getUserMedia(constraints)
 	.then(function(stream) {
 		var mediaRecorder = new MediaStreamRecorder(stream);
@@ -41,23 +33,20 @@ var mediaObject = navigator.mediaDevices.getUserMedia(constraints)
 	.catch(handleError);
 
 
-// function handleError(error) {
-// 	console.log('navigator.getUserMedia error: ', error);
-// };
-// var mediaObject = navigator.mediaDevices.getUserMedia(constraints)
-// 	.then(function(stream) {
-// 		var mediaRecorder = new MediaStreamRecorder(stream);
-// 		mediaRecorder.recorderType = StereoAudioRecorder;
-// 		mediaRecorder.mimeType = 'audio/pcm';
-// 		mediaRecorder.bufferSize = 16384;
-// 		mediaRecorder.sampleRate = 44100;
-// 		mediaRecorder.audioChannels = 1;
+interConnection.onmessage = function (message) {
+	console.log('interconnection = ', message);
+}
 
-// 		window.mr = mediaRecorder;
-// 		mediaRecorder.ondataavailable = function(blob) {
-// 			mediaRecorder.pause();
-// 			socket.send(blob);
-// 	    }
-// 		mediaRecorder.start(3000);
-// 	})
-// 	.catch(handleError);
+socket.onmessage = function (message) {
+	console.log('socket = ', message);
+	if (!message.data.search('minion'))
+		interConnection.send("ngram");
+	else {
+		if (!message.data.search('banana'))
+		{
+			console.log(message.data.search('banana'));
+			interConnection.send("kws");
+		}
+		console.log('got this from socket: ', message);
+	}
+}

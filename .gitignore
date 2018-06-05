@@ -1,6 +1,13 @@
 *.out
 .*
+*.log
+*.raw
+*.wav
 server/bin
 server/obj
+pocketsphinx/*
+pocketsphinx/
+sphinxbase/
+sphinxbase/*
 !.gitignore
 *.log
