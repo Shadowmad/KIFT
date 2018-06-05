@@ -59,6 +59,7 @@ clean:
 fclean: clean
 	@rm -rf $(HTTPSERV) $(AUDISERV)
 	@rm -rf $(EXE_PATH)
+	@rm -rf *.log
 
 re: fclean all
 

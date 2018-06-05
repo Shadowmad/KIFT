@@ -6,7 +6,7 @@
 /*   By: jtahirov <jtahirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 21:30:42 by jtahirov          #+#    #+#             */
-/*   Updated: 2018/06/03 23:11:50 by jtahirov         ###   ########.fr       */
+/*   Updated: 2018/06/04 21:47:16 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void ft_init_conf(void)
 	if (!g_config)
 		g_config = cmd_ln_init(NULL, ps_args(), TRUE,
 							   "-hmm", MODELDIR "/en-us-YJM",
-							   "-lm", MODELDIR "/1421.lm.bin",
-							   "-dict", MODELDIR "/1421.dic",
-							   "-logfn", "./kws.log",
+							   "-lm", MODELDIR "/en-us.lm.bin",
+							   "-dict", MODELDIR "/cmudict-en-us.dict",
+							   "-logfn", "./ngram.log",
 							   "-samprate", "44100",
 							   "-nfft", "2048",
 							   NULL);
