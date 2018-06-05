@@ -1,6 +1,6 @@
-minion
 set an alarm
-what time is it
-what is the weather today
-search for
-go to sleep
+search Google
+send Email
+dim Screen
+tell a Joke
+play a song
