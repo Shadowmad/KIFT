@@ -38,16 +38,9 @@ interConnection.onmessage = function (message) {
 }
 
 socket.onmessage = function (message) {
-	console.log('socket = ', message);
 	if (!message.data.search('minion'))
 		interConnection.send("ngram");
 	else {
-		if (!message.data.search('banana'))
-		{
-			console.log(message.data.search('banana'));
-			interConnection.send("kws");
-		}
-		console.log('got this from socket: ', message);
 		parseCommand(message.data);
 	}
 }
