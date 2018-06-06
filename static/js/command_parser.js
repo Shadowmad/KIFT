@@ -15,6 +15,12 @@ var tellJoke = function()
 	request.send();
 }
 
+var dimScreen = function()
+{
+	document.getElementById("overlay").style.display = "block";
+}
+
+
 var parseCommand = function(command)
 {
 	if (command.indexOf("SET AN ALARM") != -1)
@@ -37,5 +43,11 @@ var parseCommand = function(command)
 		interConnection.send("kws");
 		window.location.href = "https://youtu.be/njos57IJf-0?t=1m40s";
 	}
+	else if (command.indexOf("DIM SCREEN") != -1)
+	{
+		interConnection.send("kws");
+		dimScreen();
+	}
+	else
 		console.log(command);
 }
