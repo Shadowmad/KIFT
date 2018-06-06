@@ -6,7 +6,7 @@
 /*   By: jtahirov <jtahirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 14:26:38 by jtahirov          #+#    #+#             */
-/*   Updated: 2018/06/05 13:37:20 by jtahirov         ###   ########.fr       */
+/*   Updated: 2018/06/06 14:11:02 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ static char	*ft_parse_buffer(char buffer[])
 		result = ft_get_html("../templates/index.html");
 	if (strstr(buffer, "/static/js/audio.js"))
 		result = ft_get_html("../static/js/audio.js");
+	if (strstr(buffer, "/static/js/execute.js"))
+		result = ft_get_html("../static/js/execute.js");
 	if (strstr(buffer, "GET /static/css/styles.css"))
 		result = ft_get_html("../static/css/styles.css");
 	if (strnstr(buffer, "/alarm.html", 15))

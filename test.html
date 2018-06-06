@@ -1,16 +1,9 @@
 
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("form").on("submit", function(e) {
-			e.preventDefault();
-			window[$("form").attr("title")]();
-		});
-	});
 
-	function google() {
-		window.open("http://www.google.com/search?q=" + $("#googleform").val());
-	}
+
+
 	function sendMail() {
     $.ajax({
       type: 'POST',

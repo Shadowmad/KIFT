@@ -1,48 +1,119 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 	</head>
 
 	<body>
+		<div class="overlay" id="over"></div>
+		<div class="container-fluid">
+			<div class="row mt-5 mb-3 justify-content-md-center">
+				<div class="col-md-6 col-sm-12 col-xs-12 col-lg-4 col-xl-6 col-12 text-center">
+					<h3> Welcome to KIFT by 🌽 Corn Squad 🌽 </h3>
+				</div>
+			</div>
+			<div class="row mt-5 mb-3 justify-content-md-center">
+				<div class="col-md-6 col-sm-12 col-xs-12 col-lg-4 col-xl-6 col-12 text-center">
+					<h3> Activation </h3>
+					<p class="text-primary">	Minion	</p>
+					<h3> Commands </h3>
+					<p class="text-info command">	Set an Alarm	</p>
+					<p class="text-info command">	Search Google	</p>
+					<p class="text-info command">	Send Email	</p>
+					<p class="text-info command">	Dim Screen	</p>
+					<p class="text-info ser">	Brighten Screen	</p>
+					<p class="text-info command">	Play a song	</p>
+					<p class="text-info command">	Tell a Joke	</p>
+				</div>
+			</div>
+			<div class="row mt-5 mb-3 justify-content-md-center">
+				<div class="col-md-6 col-sm-12 col-xs-12 col-lg-4 col-xl-6 col-12 text-center">
+					<div class="addata" id="google">
+						<h4>
+							Search Google
+						</h4>
+						<form title="google">
+							<div class="form-group">
+								<input type="text" class="form-control" id="googleform" name="googleform" value="" placeholder="Enter your query">
+							<div class="form-group">
+						</form>
+						<div class="addata result" id="g_result">
+						</div>
+					</div>
+					<div class="addata" id="sendEMail">
+						<h4>
+							Send Mail
+						</h4>
+						<form title="sendEmail">
+							<div class="form-group">
+								<input type="email" class="form-control" id="compose-to" placeholder="To" required />
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="compose-subject" placeholder="Subject" required />
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="compose-message" placeholder="Message" rows="10" required></textarea>
+							</div>
+							<button type="submit" id="send-button" class="btn btn-outline-primary btn-block">Send</button>
+						</form>
+						<div class="addata result" id="g_result">
+						</div>
+					</div>
+					<div class="addata" id="sendMail">
+						<h4>
+							Set an Alarm
+						</h4>
+						<div id="jsalarmclock">
+							<div>
+								<div class="leftcolumn">
+									Current Time:
+								</div>
+								<span id="jsalarm_ct" style="letter-spacing: 1em"></span>
+							</div>
+							<div>
+								<div class="leftcolumn">
+									Set Alarm:
+								</div>
+								<span>
+									<select></select>
+									Hour
+								</span>
+								<span>
+									<select></select>
+									Minutes
+								</span>
+								<span>
+									<select></select>
+									Seconds
+								</span>
+							</div>
+							<div>
+								<div class="leftcolumn">
+									Set Alarm Action:
+								</div>
+								<input type="text" id="musicloc" size="55" value="https://www.youtube.com/watch?v=YwANQb4phH0" />
+								<span style="font: normal 11px Tahoma">
+									*Location of page to launch
+								</span>
+							</div>
+							<input type="submit" value="Set Alarm!" id="submitbutton" />
+							<input type="reset" value="reset" id="resetbutton" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-		<div id="main">
-			<div id="container">
-				<h3> Welcome to KIFT by 🌽 corn Squad 🌽 </h3>
-				<audio id="gum-local" controls autoplay></audio>
-				<p>Commands are: </p>
-				<p> ururu <BR>
-					 minion <BR>
-					 help<BR>
-					 set an alarm<BR>
-					 what time is it<BR>
-					 what's the weather today<BR>
-					 search for<BR>
-					 go to sleep<BR> </p>
-			</div>
-		</div>
-		<div class="addata" id="google">
-			<form title="google">
-				<input type="text" id="googleform" name="googleform" value="" placeholder="Enter your query">
-			</form>
-			<div class="addata result" id="g_result">
-			</div>
-		</div>
-
-		<div class="addata" id="sendMail">
-			<form title="sendMail">
-				<input type="text" id="who" name="who" value="" placeholder="To Who:">
-				<input type="text" id="title" name="title" value="" placeholder="Enter Title">
-				<textarea name="content" rows="8" cols="80"></textarea>
-				<input type="button" name="submit" value="Submit" class="submit" />
-			</form>
-			<div class="addata result" id="g_result">
-			</div>
-		</div>
 		<script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"> </script>
 		<script src="static/js/command_parser.js"></script>
 		<script src="static/js/audio.js"></script>
+		<script src="static/js/alarm.js"></script>
+		<script src="static/js/execute.js"></script>
 	</body>
 </html>
