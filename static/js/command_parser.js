@@ -3,11 +3,18 @@ var parseCommand = function(command)
 	switch (command) {
 		case command.indexOf("SET AN ALARM"):
 			interConnection.send("kws");
-			window.location.href = "http://localhost:" + location.port + "/alarm.html";
+			$("#setAlarm").toogleClass("datahid");
+			$("#setAlarm").toogleClass("dataShow");
 			break;
 		case command.indexOf("SEARCH GOOGLE"):
 			interConnection.send("kws");
-			window.location.href = "http://google.com";
+			$("#google").toogleClass("datahid");
+			$("#google").toogleClass("dataShow");
+			break;
+		case command.indexOf("SEND EMAIL"):
+			interConnection.send("kws");
+			$("#sendEmail").toogleClass("datahid");
+			$("#sendEmail").toogleClass("dataShow");
 			break;
 		case command.indexOf("TELL A JOKE"):
 			tellJoke();

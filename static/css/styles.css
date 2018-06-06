@@ -38,3 +38,11 @@ body.container-fluid {
 	-webkit-filter: invert(1) hue-rotate(180deg);
 	filter: invert(1) hue-rotate(180deg);
 }
+
+.datahid {
+	display: none;
+}
+
+.dataShow {
+	display: block;
+}
