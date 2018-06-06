@@ -6,18 +6,40 @@
 /*   By: jtahirov <jtahirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 14:26:38 by jtahirov          #+#    #+#             */
-/*   Updated: 2018/06/06 14:27:07 by jtahirov         ###   ########.fr       */
+/*   Updated: 2018/06/06 15:00:04 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_server.h>
+# include <ft_server.h>
 
-static void ft_connect_header(char **result)
+
+static void ft_connect_header(char **result, enum e_type type)
 {
-	;
+	char 	*headers;
+
+	switch (type)
+	{
+		case html:
+			headers = strdup(
+				"HTTP/1.0 200 OK\r\nServer: CPi\r\nContent-type: text/html\r\n\r\n");
+		break ;
+		case css:
+			headers = strdup(
+				"HTTP/1.0 200 OK\r\nServer: CPi\r\nContent-type: text/css\r\n\r\n");
+		break ;
+		case js:
+			headers = strdup(
+				"HTTP/1.0 200 OK\r\nServer: CPi\r\nContent-type: text/javascript\r\n\r\n");
+		break ;
+		default:
+		break ;
+	}
+	*result = !(*result) ? ft_strmjoin(2, headers, " ") : \
+				ft_strmjoin(3, headers, " ", *result);
+	free(headers);
 }
 
-static char *ft_get_file(char *filename)
+static char *ft_get_file(char *filename, enum e_type type)
 {
 	char 	*result;
 	char 	*tmp;
@@ -36,11 +58,11 @@ static char *ft_get_file(char *filename)
 		bzero(buffer, 1024);
 	}
 	close(fd);
-	ft_connect_header(&result);
+	ft_connect_header(&result, type);
 	return (result);
 }
 
-static char	*ft_parse_buffer(char buffer[], enum e_type *type)
+static char	*ft_parse_buffer(char buffer[])
 {
 	char 			*result;
 	char 			*header;
@@ -50,69 +72,18 @@ static char	*ft_parse_buffer(char buffer[], enum e_type *type)
 	if (!buffer)
 		return NULL;
 	if (strnstr(buffer, "/index.html", 15))
-	{
-		result = ft_get_file("../templates/index.html");
-		*type = html;
-	}
+		result = ft_get_file("../templates/index.html", html);
 	if (strnstr(buffer, "/alarm.html", 15))
-	{
-		result = ft_get_file("../templates/alarm.html");
-		*type = html;
-	}
+		result = ft_get_file("../templates/alarm.html", html);
 	if (strstr(buffer, "GET /static/css/styles.css"))
-	{
-		result = ft_get_file("../static/css/styles.css");
-		*type = css;
-	}
+		result = ft_get_file("../static/css/styles.css", css);
 	if (strstr(buffer, "/static/js/audio.js"))
-	{
-		result = ft_get_file("../static/js/audio.js");
-		*type = js;
-	}
+		result = ft_get_file("../static/js/audio.js", js);
 	if (strstr(buffer, "/static/js/alarm.js"))
-	{
-		result = ft_get_file("../static/js/alarm.js");
-		*type = js;
-	}
+		result = ft_get_file("../static/js/alarm.js", js);
 	if (strstr(buffer, "/static/js/command_parser.js"))
-	{
-		result = ft_get_file("../static/js/command_parser.js");
-		*type = js;
-	}
-
+		result = ft_get_file("../static/js/command_parser.js", js);
 	return (result);
-}
-
-static void 	ft_answer(int client_fd, char *result, int len, enum e_type type)
-{
-	char 	*headers;
-	char 	*answer;
-
-	printf("this is what i got from type: %d\n", type);
-	switch (type)
-	{
-		case html:
-			headers = strdup(
-				"HTTP/1.0 200 OK\r\nServer: CPi\r\nContent-type: text/html\r\n\r\n");
-		break ;
-		case css:
-			headers = strdup(
-				"HTTP/1.0 200 OK\r\nServer: CPi\r\nContent-type: text/css\r\n\r\n");
-		break ;
-		case js:
-			headers = strdup(
-				"HTTP/1.0 200 OK\r\nServer: CPi\r\nContent-type: text/javascript\r\n\r\n");
-		break ;
-		default:
-		break ;
-	}
-	printf("\n\nThis is my header:\n\t%s\n\n", headers);
-	answer = !result ? ft_strmjoin(2, headers, " ") : \
-				ft_strmjoin(3, headers, " ", result);
-	write(client_fd, answer, len + strlen(headers) + 1);
-	free(answer);
-	free(headers);
-	close(client_fd);
 }
 
 static void ft_parse_clients(int socketfd)
@@ -122,10 +93,8 @@ static void ft_parse_clients(int socketfd)
 	socklen_t 	addr_size;
 	char 		buffer[2048];
 	char 		*result;
-	enum e_type type;
 
 	addr_size = sizeof(t_client);
-	// fcntl(socketfd, F_SETFL, O_NONBLOCK);
 	while (1)
 	{
 		client_fd = accept(
@@ -138,12 +107,13 @@ static void ft_parse_clients(int socketfd)
 		read(client_fd, buffer, 2047);
 		if (!buffer[0])
 			continue ;
-		if (!(result = ft_parse_buffer(buffer, &type)))
+		if (!(result = ft_parse_buffer(buffer)))
 		{
 			printf("result = NULL can't find the page O_O \n");
 			continue ;
 		}
-		ft_answer(client_fd, result, strlen(result), type);
+		write(client_fd, result, strlen(result));
+		close(client_fd);
 		if (result)
 			free(result);
 		result = NULL;
