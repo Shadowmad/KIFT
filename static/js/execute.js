@@ -82,3 +82,11 @@ function brightenScreen()
 {
 	$("body").toggleClass('nightmode');
 }
+
+// Shutdown
+function shitdown()
+{
+	var msg = new SpeechSynthesisUtterance("Good Bye, Corrector!");
+	window.speechSynthesis.speak(msg);
+	window.close();
+}

@@ -1,51 +1,54 @@
 var parseCommand = function(command)
 {
+	var com = false;
 	switch (command) {
 		case "SET AN ALARM":
+		case "SET ALARM":
 			interConnection.send("kws");
-			$("#setAlarm").toggleClass("datahid");
 			$("#setAlarm").toggleClass("dataShow");
-			$(".lds-hourglass").toggleClass("dataShow");
-			$(".lds-ripple").toggleClass("datahid");
+			com = true;
 			break;
 		case "SEARCH GOOGLE":
 			interConnection.send("kws");
-			$("#google").toggleClass("datahid");
 			$("#google").toggleClass("dataShow");
-			$(".lds-hourglass").toggleClass("dataShow");
-			$(".lds-ripple").toggleClass("datahid");
+			com = true;
 			break;
 		case "SEND EMAIL":
+		case "SEND AN EMAIL":
 			interConnection.send("kws");
-			$("#sendEmail").toggleClass("datahid");
 			$("#sendEmail").toggleClass("dataShow");
-			$(".lds-hourglass").toggleClass("dataShow");
-			$(".lds-ripple").toggleClass("datahid");
+			com = true;
 			break;
 		case "TELL A JOKE":
 			tellJoke();
 			interConnection.send("kws");
-			$(".lds-hourglass").toggleClass("dataShow");
-			$(".lds-ripple").toggleClass("datahid");
+			com = true;
 			break;
 		case "PLAY A SONG":
+		case "PLAY SONG":
 			interConnection.send("kws");
-			$(".lds-hourglass").toggleClass("dataShow");
-			$(".lds-ripple").toggleClass("datahid");
+			playSong();
+			com = true;
 			break;
 		case "DIM SCREEN":
 			interConnection.send("kws");
 			dimScreen();
-			$(".lds-hourglass").toggleClass("dataShow");
-			$(".lds-ripple").toggleClass("datahid");
+			com = true;
 			break;
 		case "BRIGHTEN SCREEN":
 			interConnection.send("kws");
-			BrightenScreen();
-			$(".lds-hourglass").toggleClass("dataShow");
-			$(".lds-ripple").toggleClass("datahid");
+			brightenScreen();
+			com = true;
+			break;
+		case "SHUTDOWN":
+			shitdown();
 			break;
 		default:
 			console.log(command);
+	}
+	if (com)
+	{
+		$(".lds-hourglass").toggleClass("datahid");
+		$(".lds-ripple").toggleClass("dataShowRipple");
 	}
 }

@@ -40,9 +40,9 @@ interConnection.onmessage = function (message) {
 socket.onmessage = function (message) {
 	if (!message.data.search('minion')) {
 		interConnection.send("ngram");
+		$(".data").removeClass("dataShow");
 		$(".lds-hourglass").toggleClass("datahid");
-		$(".lds-ripple").toggleClass("dataShow");
-		$(".lds-ripple").toggleClass("datahid");
+		$(".lds-ripple").toggleClass("dataShowRipple");
 	}
 	else {
 		parseCommand(message.data);

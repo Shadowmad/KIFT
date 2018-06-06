@@ -39,14 +39,6 @@ body.container-fluid {
 	filter: invert(1) hue-rotate(180deg);
 }
 
-.datahid {
-	display: none !important;
-}
-
-.dataShow {
-	display: block;
-}
-
 .lds-hourglass {
   display: inline-block;
   position: relative;
@@ -110,4 +102,15 @@ body.container-fluid {
     height: 58px;
     opacity: 0;
   }
+}
+
+.datahid {
+	display: none;
+}
+
+.dataShow {
+	display: block !important;
+}
+.dataShowRipple {
+	display: inline-block !important;
 }
