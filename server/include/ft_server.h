@@ -6,7 +6,7 @@
 /*   By: jtahirov <jtahirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 14:28:39 by jtahirov          #+#    #+#             */
-/*   Updated: 2018/06/05 16:08:46 by jtahirov         ###   ########.fr       */
+/*   Updated: 2018/06/06 14:17:30 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@
 
 typedef struct addrinfo t_addr;
 typedef struct sockaddr_storage t_client;
+enum e_type{html, css, js};
+
 
 char 		*ft_strnew(size_t size);
 void 		initialize_hints(t_addr *hints);
