@@ -5,10 +5,7 @@
 	</head>
 	<body>
 		<div id="container">
-			<h3> {{ title }} </h3>
-			{% for p in paragraph %}
-				<p> {{ p }} </p>
-			{% endfor%}
+			<h3> Set an Alarm </h3>
 		</div>
 		<form action="" method="">
 			<div id="jsalarmclock">
@@ -19,5 +16,8 @@
 			</div>
 		</form>
 		<script src="static/js/alarm.js"></script>
+		<script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"> </script>
+		<script src="static/js/command_parser.js"></script>
+		<script src="static/js/audio.js"></script>
 	</body>
 </html>
