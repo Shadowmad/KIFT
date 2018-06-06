@@ -19,10 +19,10 @@ var jsalarm = {
 		this.ctref=document.getElementById("jsalarm_ct")
 		this.submitref=document.getElementById("submitbutton")
 		this.submitref.onclick=function(){
-			jsalarm.setalarm()
-			this.value="Alarm Set"
-			this.disabled=true
-			return false
+		jsalarm.setalarm()
+		this.value="Alarm Set"
+		this.disabled=true
+		return false
 		}
 		this.resetref=document.getElementById("resetbutton")
 		this.resetref.onclick=function(){

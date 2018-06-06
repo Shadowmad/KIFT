@@ -1,6 +1,7 @@
 set an alarm
-search Google
-send Email
-dim Screen
-tell a Joke
+search google
+send email
+dim screen
+tell a joke
 play a song
+brighten screen
