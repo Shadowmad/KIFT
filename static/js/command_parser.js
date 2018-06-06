@@ -1,35 +1,49 @@
 var parseCommand = function(command)
 {
 	switch (command) {
-		case command.indexOf("SET AN ALARM"):
+		case "SET AN ALARM":
 			interConnection.send("kws");
-			$("#setAlarm").toogleClass("datahid");
-			$("#setAlarm").toogleClass("dataShow");
+			$("#setAlarm").toggleClass("datahid");
+			$("#setAlarm").toggleClass("dataShow");
+			$(".lds-hourglass").toggleClass("dataShow");
+			$(".lds-ripple").toggleClass("datahid");
 			break;
-		case command.indexOf("SEARCH GOOGLE"):
+		case "SEARCH GOOGLE":
 			interConnection.send("kws");
-			$("#google").toogleClass("datahid");
-			$("#google").toogleClass("dataShow");
+			$("#google").toggleClass("datahid");
+			$("#google").toggleClass("dataShow");
+			$(".lds-hourglass").toggleClass("dataShow");
+			$(".lds-ripple").toggleClass("datahid");
 			break;
-		case command.indexOf("SEND EMAIL"):
+		case "SEND EMAIL":
 			interConnection.send("kws");
-			$("#sendEmail").toogleClass("datahid");
-			$("#sendEmail").toogleClass("dataShow");
+			$("#sendEmail").toggleClass("datahid");
+			$("#sendEmail").toggleClass("dataShow");
+			$(".lds-hourglass").toggleClass("dataShow");
+			$(".lds-ripple").toggleClass("datahid");
 			break;
-		case command.indexOf("TELL A JOKE"):
+		case "TELL A JOKE":
 			tellJoke();
 			interConnection.send("kws");
+			$(".lds-hourglass").toggleClass("dataShow");
+			$(".lds-ripple").toggleClass("datahid");
 			break;
-		case command.indexOf("PLAY A SONG"):
+		case "PLAY A SONG":
 			interConnection.send("kws");
+			$(".lds-hourglass").toggleClass("dataShow");
+			$(".lds-ripple").toggleClass("datahid");
 			break;
-		case command.indexOf("DIM SCREEN"):
+		case "DIM SCREEN":
 			interConnection.send("kws");
 			dimScreen();
+			$(".lds-hourglass").toggleClass("dataShow");
+			$(".lds-ripple").toggleClass("datahid");
 			break;
-		case command.indexOf("BRIGHTEN SCREEN"):
+		case "BRIGHTEN SCREEN":
 			interConnection.send("kws");
 			BrightenScreen();
+			$(".lds-hourglass").toggleClass("dataShow");
+			$(".lds-ripple").toggleClass("datahid");
 			break;
 		default:
 			console.log(command);
