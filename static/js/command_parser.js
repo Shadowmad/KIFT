@@ -20,6 +20,10 @@ var dimScreen = function()
 	document.getElementById("overlay").style.display = "block";
 }
 
+var BrightenScreen = function()
+{
+	document.getElementById("overlay").style.display = "none";
+}
 
 var parseCommand = function(command)
 {
@@ -47,6 +51,11 @@ var parseCommand = function(command)
 	{
 		interConnection.send("kws");
 		dimScreen();
+	}
+	else if (command.indexOf("BRIGHTEN SCREEN") != -1)
+	{
+		interConnection.send("kws");
+		BrightenScreen();
 	}
 	else
 		console.log(command);
