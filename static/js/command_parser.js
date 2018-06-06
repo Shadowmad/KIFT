@@ -32,6 +32,10 @@ var parseCommand = function(command)
 		tellJoke();
 		interConnection.send("kws");
 	}
-	else
+	else if (command.indexOf("PLAY A SONG") != -1)
+	{
+		interConnection.send("kws");
+		window.location.href = "https://youtu.be/njos57IJf-0?t=1m40s";
+	}
 		console.log(command);
 }
