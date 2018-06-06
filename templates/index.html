@@ -1,25 +1,46 @@
 <html>
 	<head>
-		<!-- <link rel="stylesheet" href="../static/css/main.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
 
-	<div id="main">
-		<div id="container">
-			<h3> Welcome to KIFT by 🌽 corn Squad 🌽 </h3>
-			<audio id="gum-local" controls autoplay></audio>
-			<p>Commands are: </p>
-			<p> ururu <BR> 
-				 minion <BR>
-				 help<BR>
-				 set an alarm<BR>
-				 what time is it<BR>
-				 what's the weather today<BR>
-				 search for<BR>
-				 go to sleep<BR> </p>
+		<div id="main">
+			<div id="container">
+				<h3> Welcome to KIFT by 🌽 corn Squad 🌽 </h3>
+				<audio id="gum-local" controls autoplay></audio>
+				<p>Commands are: </p>
+				<p> ururu <BR>
+					 minion <BR>
+					 help<BR>
+					 set an alarm<BR>
+					 what time is it<BR>
+					 what's the weather today<BR>
+					 search for<BR>
+					 go to sleep<BR> </p>
+			</div>
 		</div>
-	</div>
+		<div class="addata" id="google">
+			<form title="google">
+				<input type="text" id="googleform" name="googleform" value="" placeholder="Enter your query">
+			</form>
+			<div class="addata result" id="g_result">
+			</div>
+		</div>
+
+		<div class="addata" id="sendMail">
+			<form title="sendMail">
+				<input type="text" id="who" name="who" value="" placeholder="To Who:">
+				<input type="text" id="title" name="title" value="" placeholder="Enter Title">
+				<textarea name="content" rows="8" cols="80"></textarea>
+				<input type="button" name="submit" value="Submit" class="submit" />
+			</form>
+			<div class="addata result" id="g_result">
+			</div>
+		</div>
 		<script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"> </script>
 		<script src="static/js/command_parser.js"></script>
 		<script src="static/js/audio.js"></script>
