@@ -75,10 +75,10 @@ function playSong()
 // Dimming
 function dimScreen()
 {
-	$("#over").addClass("overlay");
+	$("body").toggleClass('nightmode');
 }
 
 function brightenScreen()
 {
-	$("#over").removeClass("overlay");
+	$("body").toggleClass('nightmode');
 }
