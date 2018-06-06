@@ -27,36 +27,32 @@ var BrightenScreen = function()
 
 var parseCommand = function(command)
 {
-	if (command.indexOf("SET AN ALARM") != -1)
-	{
-		interConnection.send("kws");
-		window.location.href = "http://localhost:" + location.port + "/alarm.html";
+	switch (command) {
+		case command.indexOf("SET AN ALARM"):
+			interConnection.send("kws");
+			window.location.href = "http://localhost:" + location.port + "/alarm.html";
+			break;
+		case command.indexOf("SEARCH GOOGLE"):
+			interConnection.send("kws");
+			window.location.href = "http://google.com";
+			break;
+		case command.indexOf("TELL A JOKE"):
+			tellJoke();
+			interConnection.send("kws");
+			break;
+		case command.indexOf("PLAY A SONG"):
+			interConnection.send("kws");
+			window.location.href = "https://youtu.be/njos57IJf-0?t=1m40s";
+			break;
+		case command.indexOf("DIM SCREEN"):
+			interConnection.send("kws");
+			dimScreen();
+			break;
+		case command.indexOf("BRIGHTEN SCREEN"):
+			interConnection.send("kws");
+			BrightenScreen();
+			break;
+		default:
+			console.log(command);
 	}
-	else if (command.indexOf("SEARCH GOOGLE") != -1)
-	{
-		interConnection.send("kws");
-		window.location.href = "http://google.com";
-	}
-	else if (command.indexOf("TELL A JOKE") != -1)
-	{
-		tellJoke();
-		interConnection.send("kws");
-	}
-	else if (command.indexOf("PLAY A SONG") != -1)
-	{
-		interConnection.send("kws");
-		window.location.href = "https://youtu.be/njos57IJf-0?t=1m40s";
-	}
-	else if (command.indexOf("DIM SCREEN") != -1)
-	{
-		interConnection.send("kws");
-		dimScreen();
-	}
-	else if (command.indexOf("BRIGHTEN SCREEN") != -1)
-	{
-		interConnection.send("kws");
-		BrightenScreen();
-	}
-	else
-		console.log(command);
 }
