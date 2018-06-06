@@ -1,0 +1,63 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("form").on("submit", function(e) {
+			e.preventDefault();
+			window[$("form").attr("title")]();
+		});
+	});
+
+	function google() {
+		window.open("http://www.google.com/search?q=" + $("#googleform").val());
+	}
+	function sendMail() {
+    $.ajax({
+      type: 'POST',
+      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+      data: {
+        'key': 'YOUR API KEY HERE',
+        'message': {
+          'from_email': 'YOUR@EMAIL.HERE',
+          'to': [
+              {
+                'email': 'RECIPIENT@EMAIL.HERE',
+                'name': 'RECIPIENT NAME (OPTIONAL)',
+                'type': 'to'
+              }
+            ],
+          'autotext': 'true',
+          'subject': 'YOUR SUBJECT HERE!',
+          'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+        }
+      }
+     }).done(function(response) {
+       console.log(response); // if you're into that sorta thing
+     });
+}
+</script>
+
+<style media="screen">
+	.addata {
+		/* display: none; */
+	}
+</style>
+
+<div class="addata" id="google">
+	<form title="google">
+		<input type="text" id="googleform" name="googleform" value="" placeholder="Enter your query">
+	</form>
+	<div class="addata result" id="g_result">
+	</div>
+</div>
+
+<div class="addata" id="sendMail">
+	<form title="sendMail">
+		<input type="text" id="who" name="who" value="" placeholder="To Who:">
+		<input type="text" id="title" name="title" value="" placeholder="Enter Title">
+		<textarea name="content" rows="8" cols="80"></textarea>
+		<input type="button" name="submit" value="Submit" class="submit" />
+	</form>
+	<div class="addata result" id="g_result">
+	</div>
+</div>
