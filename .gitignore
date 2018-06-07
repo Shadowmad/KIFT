@@ -17,3 +17,5 @@ sphinxbase/*
 *.log_pronounce
 *.sent
 *.vocab
+server/audioServer
+server/httpServer

@@ -6,7 +6,7 @@
 /*   By: jtahirov <jtahirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 14:26:38 by jtahirov          #+#    #+#             */
-/*   Updated: 2018/06/06 15:00:04 by jtahirov         ###   ########.fr       */
+/*   Updated: 2018/06/06 15:32:27 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,12 @@ static char	*ft_parse_buffer(char buffer[])
 		return NULL;
 	if (strnstr(buffer, "/index.html", 15))
 		result = ft_get_file("../templates/index.html", html);
-	if (strnstr(buffer, "/alarm.html", 15))
-		result = ft_get_file("../templates/alarm.html", html);
 	if (strstr(buffer, "GET /static/css/styles.css"))
 		result = ft_get_file("../static/css/styles.css", css);
 	if (strstr(buffer, "/static/js/audio.js"))
 		result = ft_get_file("../static/js/audio.js", js);
+	if (strstr(buffer, "/static/js/execute.js"))
+		result = ft_get_file("../static/js/execute.js", js);
 	if (strstr(buffer, "/static/js/alarm.js"))
 		result = ft_get_file("../static/js/alarm.js", js);
 	if (strstr(buffer, "/static/js/command_parser.js"))
