@@ -67,6 +67,6 @@ To install PocketSphinx first you need to install SphinxCore. To do so follow be
 - brew install libwebsockets
 
 #### How to Launch
-- cd server/cserver/
+- cd server/
 - make
-- ./cserver/launch.sh
+- ./launch.sh
